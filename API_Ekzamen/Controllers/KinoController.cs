@@ -226,6 +226,25 @@ namespace API_Ekzamen.Controllers
             }
         }
 
+        [HttpGet("/GetTicketAdmin")]
+        public async Task<List<Ticket2>> GetTicketAdmin()
+        {
+            try
+            {
+                using (SqlConnection db = new SqlConnection(conStr))
+                {
+                    db.Open();
+                    var result = db.Query<Ticket2>("pGetTicketAdmin", commandType: CommandType.StoredProcedure).ToList();
+                    db.Close();
+                    return result;
+                }
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+        }
+
         [HttpGet("/BuyTicket")]
         public async Task<List<Ticket>> BuyTicket(int place_id, int session_id, int user_id, decimal amount)
         {

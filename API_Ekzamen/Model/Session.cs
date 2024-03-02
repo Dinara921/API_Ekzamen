@@ -43,6 +43,7 @@
     }
     public class Ticket2
     {
+        public string Login { get; set; }
         public int Ticket_id { get; set; }
         public string Title { get; set; }
         public string Time { get; set; }
