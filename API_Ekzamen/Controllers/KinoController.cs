@@ -26,6 +26,7 @@ namespace API_Ekzamen.Controllers
             }
             catch (Exception ex)
             {
+
                 return null;
             }
         }
